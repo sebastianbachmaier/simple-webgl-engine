@@ -1,0 +1,45 @@
+{
+  "name": "shader-tutorial",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "prepublish": "tsc",
+  "scripts": {
+    "start": "npm run build:cp-public && npm run build:watch & npx http-server ./dist -o /index.html & wait",
+    "build": "tsc -p tsconfig.build.json",
+    "build:watch": "ln -f ./src/*.* ./dist/src && tsc --watch -p tsconfig.json",
+    "build:cp-public": "ln -f ./public/* ./dist",
+    "test": "VITE_CJS_TRACE=true vitest --run",
+    "dev": "npm run build && node dist/index.js",
+    "semantic-release": "semantic-release"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "keywords": [
+    "npm",
+    "package",
+    "tool"
+  ],
+  "author": "sebastianbachmaier",
+  "license": "MIT",
+  "homepage": "",
+  "devDependencies": {
+    "@semantic-release/changelog": "^6.0.3",
+    "@semantic-release/git": "^10.0.1",
+    "@semantic-release/github": "^9.2.6",
+    "@semantic-release/gitlab": "^13.0.2",
+    "@semantic-release/npm": "^11.0.2",
+    "@types/argparse": "^2.0.14",
+    "@types/debug": "^4.1.12",
+    "@types/node": "^20.11.5",
+    "semantic-release": "^23.0.0",
+    "typescript": "^5.3.3",
+    "vitest": "^1.2.1"
+  },
+  "directories": {
+    "doc": "docs"
+  },
+  "description": ""
+}
