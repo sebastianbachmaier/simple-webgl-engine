@@ -27,8 +27,7 @@ export class Vertex2D {
 	 * rotate triangle around its centroid
 	 * @param angle in radians
 	 */
-	public rotate(angle: number, centroid?: t_Point2D): void {
-		centroid = centroid ?? this.centroid;
+	public rotate(angle: number, centroid: t_Point2D = this.centroid): void {
 		const cos = Math.cos(angle);
 		const sin = Math.sin(angle);
 

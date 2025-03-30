@@ -39,6 +39,9 @@ export function createProgram(
 ) {
     
 	const program = gl.createProgram();
+    if (!program) {
+        throw new Error('Unable to create program');
+    }
 	gl.attachShader(program, vertexShader);
 	gl.attachShader(program, fragmentShader);
 	gl.linkProgram(program);
